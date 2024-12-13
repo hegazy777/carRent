@@ -171,8 +171,7 @@ const AllCars = () => {
             nextLinkClassName={"page-link"}
             breakClassName={"page-item"}
             breakLinkClassName={"page-link"}
-            activeClassName={"active"}
-            
+            activeClassName={"active"} 
           />
         </div>
       </div>

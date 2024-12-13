@@ -11,6 +11,13 @@ import card1 from "../../assets/imgs/card1.png";
 import card2 from "../../assets/imgs/card2.png";
 import card3 from "../../assets/imgs/card3.png";
 
+
+import logo11 from "../../assets/imgs/logo11.png";
+import logo222 from "../../assets/imgs/logo22.png";
+import logo33 from "../../assets/imgs/logo33.png";
+import logo44 from "../../assets/imgs/logo44.png";
+import logo55 from "../../assets/imgs/logo55.png";
+
 import HomeSection from "../HeroSection/HeroSection";
 import { Link } from "react-router-dom";
 import Navbar from "../NavBar/Navbar";
@@ -18,6 +25,7 @@ import Footer from "../Footer/Footer";
 
 const CarCard = () => {
   const carImages = [car1, car2, car3, car4];
+  const clientLogos = [logo11, logo222, logo33, logo44,logo55];
   return (
     <>
       <Navbar />
@@ -243,7 +251,27 @@ const CarCard = () => {
         </div>
       </div>
 
-      <Footer/>
+      <div className="Client-Logo section mt-5 mb-5">
+        <div className="container text-center">
+          <div className="row justify-content-center">
+            {clientLogos.map((logo , index) => (
+              <div
+                key={index}
+                className="  mb-4 d-flex justify-content-center align-items-center flex-row"
+              >
+                <img
+                  src={logo}
+                  alt={logo}
+                  
+                 
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <Footer />
     </>
   );
 };
