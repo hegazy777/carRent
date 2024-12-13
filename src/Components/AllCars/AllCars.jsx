@@ -172,6 +172,7 @@ const AllCars = () => {
             breakClassName={"page-item"}
             breakLinkClassName={"page-link"}
             activeClassName={"active"}
+            
           />
         </div>
       </div>
