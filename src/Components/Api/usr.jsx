@@ -4,7 +4,7 @@ import axios from 'axios';
 function User() {
   const [users, setUsers] = useState([]); 
 
- fdsfj // Function to fetch users
+ 
   const getUser = async () => {
     try {
       const response = await axios.get('https://jsonplaceholder.typicode.com/users/');

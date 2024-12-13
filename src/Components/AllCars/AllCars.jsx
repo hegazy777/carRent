@@ -7,8 +7,6 @@ import icon1 from "../../assets/imgs/user.png";
 import icon2 from "../../assets/imgs/cardoor.png";
 import icon3 from "../../assets/imgs/22.png";
 import icon4 from "../../assets/imgs/air.png";
-import car4 from "../../assets/imgs/image11.png";
-
 const AllCars = () => {
   const [cars, setCars] = useState([]);
 
@@ -82,7 +80,7 @@ const AllCars = () => {
                 }}
               >
                 <img
-                  src={car4}
+                  src="https://via.placeholder.com/300x200"
                   className="card-img-top"
                   alt="Car"
                 />
@@ -142,9 +140,14 @@ const AllCars = () => {
                       <strong>$2,300</strong> /day
                     </h5>
                   </div>
-                  <div className="align-items-center">
+                  <div className=" align-items-center">
                     <button className="btn btn-primary mt-4 w-100">
-                      Rent Now
+                      <Link
+                        to={`/car/${cars.id}`}
+                        style={{ textDecoration: "none", color: "white" }}
+                      >
+                        Rent Now
+                      </Link>
                     </button>
                   </div>
                 </div>
@@ -171,7 +174,7 @@ const AllCars = () => {
             nextLinkClassName={"page-link"}
             breakClassName={"page-item"}
             breakLinkClassName={"page-link"}
-            activeClassName={"active"} 
+            activeClassName={"active"}
           />
         </div>
       </div>
@@ -180,5 +183,3 @@ const AllCars = () => {
 };
 
 export default AllCars;
-
-

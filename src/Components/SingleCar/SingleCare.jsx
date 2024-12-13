@@ -77,12 +77,6 @@ const SingleCar = () => {
                   cursor: "pointer", 
                   transition: "background-color 0.3s ease", 
                 }}
-                onMouseOver={(e) =>
-                  (e.target.style.backgroundColor = "#1572D33A")
-                } // تغيير الخلفية عند التمرير
-                onMouseOut={(e) =>
-                  (e.target.style.backgroundColor = "#1572D31A")
-                } // استعادة الخلفية عند الخروج
               >
                 POPULAR RENTAL DEALS
               </button>
@@ -90,16 +84,13 @@ const SingleCar = () => {
               <h1 className="">Most popular cars rental deals</h1>
             </div>
             <p>
-              {" "}
               <strong>Name : </strong>
               {car.car}
             </p>
             <p>
               <strong>Price:</strong> {car.price}
             </p>
-
             <p>
-              {" "}
               <strong>Car Color :</strong> {car.car_color}
             </p>
             <p>

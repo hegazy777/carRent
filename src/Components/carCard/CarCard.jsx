@@ -11,7 +11,6 @@ import card1 from "../../assets/imgs/card1.png";
 import card2 from "../../assets/imgs/card2.png";
 import card3 from "../../assets/imgs/card3.png";
 
-
 import logo11 from "../../assets/imgs/logo11.png";
 import logo222 from "../../assets/imgs/logo22.png";
 import logo33 from "../../assets/imgs/logo33.png";
@@ -25,7 +24,7 @@ import Footer from "../Footer/Footer";
 
 const CarCard = () => {
   const carImages = [car1, car2, car3, car4];
-  const clientLogos = [logo11, logo222, logo33, logo44,logo55];
+  const clientLogos = [logo11, logo222, logo33, logo44, logo55];
   return (
     <>
       <Navbar />
@@ -142,10 +141,12 @@ const CarCard = () => {
                       <strong>$2,300</strong> /day
                     </h5>
                   </div>
-                  <div className="align-items-center">
-                    <button className="btn btn-primary mt-4 w-100">
-                      Rent Now
-                    </button>
+                  <div className=" d-flex align-item-content justify-content-center ">
+                    <Link to="/AllCars">
+                      <button className="btn btn-primary mt-4 align-items-center">
+                        Show all vehicles
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -153,9 +154,21 @@ const CarCard = () => {
           ))}
         </div>
 
-        <div className="bt-more w-20 d-flex align-item-content justify-content-center mb-5">
+        <div className="bt-more  d-flex align-item-content justify-content-center mb-5">
           <Link to="/AllCars">
-            <button className="btn btn-primary mt-4">Show all vehicles</button>
+            <button className="btn btn-primary mt-4 " style={{
+                width: "300px",
+                padding: "16px",
+                marginTop: "20px",
+                marginBottom: "40px",
+                backgroundColor: "#E0E0E0",
+                color: "#4E4E4E",
+                border: "none",
+                borderRadius: "8px",
+                fontSize: "20px",
+                cursor: "pointer",
+                
+              }}>Show all vehicles</button>
           </Link>
         </div>
       </div>
@@ -167,15 +180,15 @@ const CarCard = () => {
               type="button"
               className=""
               style={{
-                width: "300px",
+                width: "200px",
                 padding: "16px",
-                marginTop: "20px",
+                marginTop: "100px",
                 marginBottom: "40px",
                 backgroundColor: "#1572D31A",
                 color: "#1572D3",
                 border: "none",
                 borderRadius: "8px",
-                fontWeight: "bold",
+                
                 fontSize: "16px",
                 cursor: "pointer",
                 transition: "background-color 0.3s ease",
@@ -185,7 +198,7 @@ const CarCard = () => {
               }
               onMouseOut={(e) => (e.target.style.backgroundColor = "#1572D31A")}
             >
-              POPULAR RENTAL DEALS
+              HOW IT WORK
             </button>
 
             <h1
@@ -253,17 +266,33 @@ const CarCard = () => {
 
       <div className="Client-Logo section mt-5 mb-5">
         <div className="container text-center">
-          <div className="row justify-content-center">
-            {clientLogos.map((logo , index) => (
+          <div
+            className="d-flex flex-wrap justify-content-center align-items-center"
+            style={{ gap: "1.5rem" }}
+          >
+            {clientLogos.map((logo, index) => (
               <div
                 key={index}
-                className="  mb-4 d-flex justify-content-center align-items-center flex-row"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flex: "0 1 calc(15% - 1.5rem)",
+                }}
               >
                 <img
                   src={logo}
-                  alt={logo}
-                  
-                 
+                  alt={`Client Logo ${index + 1}`}
+                  style={{
+                    maxWidth: "100px",
+                    height: "auto",
+                    filter: "grayscale(100%)",
+                    transition: "filter 0.3s ease",
+                  }}
+                  onMouseOver={(e) => (e.target.style.filter = "grayscale(0%)")}
+                  onMouseOut={(e) =>
+                    (e.target.style.filter = "grayscale(100%)")
+                  }
                 />
               </div>
             ))}
